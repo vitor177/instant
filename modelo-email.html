@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório Mensal</title>
+    <style>
+        body {
+            font-family: Verdana, sans-serif;
+        }
+
+        .titulo {
+            font-size: 1.5em;
+            font-weight: bold;
+            text-align: center;
+            background-color: #ADADAD;
+            padding: 0.5em 0 0.5em 0.5em;
+            position: relative;
+            margin-bottom: 0;
+        }
+
+        .subtitulo {
+            font-size: 0.8em;
+            text-align: center;
+            background-color: #E8E8E8;
+            padding: 0.5em 0 0.5em 0.5em;
+            margin-top: 0;
+            position: relative;
+            top: 0;
+        }
+
+        .secao {
+            font-size: 1.2em;
+            text-align: center;
+            font-weight: bold;
+            background-color: #E8E8E8;
+            padding: 0.5em 0 0.5em 0.5em;
+            top: 0;
+        }
+
+        .lista {
+            margin: 0.1em 0 0.2em 1em;
+        }
+
+        li {
+            margin-bottom: 0.4em;
+        }
+
+        .tabela_de_imagens {
+            align-items: center;
+        }
+
+        .footer {
+            text-align: center;
+            background-color: #ADADAD;
+            width: 100%;
+            padding: 1em 0;
+            margin-top: 1em;
+        }
+
+        .logo_residencia {
+            width: 14em;
+            padding: 0 2em;
+        }
+
+        .logo_ra {
+            width: 3.5em;
+        }
+
+        .logo_trf5 {
+            width: 5em;
+        }
+    </style>
+
+    <script>
+        const uf = '4';
+        const dados_extraidos = {
+            "siglas": {
+                "0": "AL",
+                "1": "CE",
+                "2": "PB",
+                "3": "PE",
+                "4": "RN",
+                "5": "SE"
+            },
+            "sem_movimento_30": {
+                "0": "20.922",
+                "1": "39.672",
+                "2": "25.703",
+                "3": "31.815",
+                "4": "15.442",
+                "5": "13.368"
+            },
+            "sem_movimento_60": {
+                "0": "7.487",
+                "1": "12.554",
+                "2": "8.174",
+                "3": "10.147",
+                "4": "3.749",
+                "5": "3.782"
+            },
+            "sem_movimento_90": {
+                "0": "18.167",
+                "1": "33.331",
+                "2": "18.603",
+                "3": "20.301",
+                "4": "4.176",
+                "5": "6.064"
+            }
+        }
+
+        function plot_relatorio() {
+            document.getElementById('sigla').textContent = dados_extraidos.siglas[uf]
+
+            document.getElementById('sem_movimento_30').textContent = dados_extraidos.sem_movimento_30[uf]
+            document.getElementById('sem_movimento_60').textContent = dados_extraidos.sem_movimento_60[uf]
+            document.getElementById('sem_movimento_90').textContent = dados_extraidos.sem_movimento_90[uf]
+
+            document.getElementById('prescricao_01').textContent = dados_extraidos.sem_movimento_30[uf]
+            document.getElementById('prescricao_02').textContent = dados_extraidos.sem_movimento_60[uf]
+            document.getElementById('prescricao_03').textContent = dados_extraidos.sem_movimento_90[uf]
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <p class="titulo">Relatório Mensal da 1° Vara do Estado <span id="sigla"></span></p>
+        <p class="subtitulo">Data de extração <strong id="data_extracao">XX/XX/XXXX</strong></p>
+    </div>
+
+    <div>
+        <p class="secao">Tempo de Movimentação</p>
+        <ul class="lista">
+            <li>De 30 até 59 dias sem movimento: <strong id="sem_movimento_30">00000</strong></li>
+            <li>De 60 até 89 dias sem movimento: <strong id="sem_movimento_60">00000</strong></li>
+            <li>Mais de 90 dias sem movimento: <strong id="sem_movimento_90">00000</strong></li>
+        </ul>
+    </div>
+
+    <div>
+        <p class="secao">Prescrição em Improbidade Administrativa</p>
+        <ul class="lista">
+            <li>Processos com menos de 1 ano para prescrição: <strong id="prescricao_01">00000</strong></li>
+            <li>Processos entre 1 e 2 anos para prescrição: <strong id="prescricao_02">00000</strong></li>
+            <li>Processos entre 2 e 3 anos para prescrição: <strong id="prescricao_03">00000</strong></li>
+        </ul>
+    </div>
+    <br>
+
+    <table class="tabela_de_imagens" align="center">
+        <tr>
+            <td>
+                <img class="imagem_grade logo_trf5"
+                    src="https://residenciaregional.jfrn.jus.br/wp-content/uploads/2024/02/logo-trf5-300x191.png"
+                    alt="Logo do TRF5">
+            </td>
+            <td>
+                <img class="imagem_grade logo_residencia"
+                    src="https://residenciaregional.jfrn.jus.br/wp-content/uploads/2022/03/Residencia_logo-C.png"
+                    alt="Logo da Residência em TI">
+            </td>
+            <td>
+                <img class="imagem_grade logo_ra"
+                    src="https://residenciaregional.jfrn.jus.br/wp-content/uploads/2024/02/logo_ra.png"
+                    alt="Logo da Residência em TI">
+            </td>
+        </tr>
+    </table>
+
+    <div class="footer">
+        <strong>Para mais informações acesse o Instant:</strong><br>
+        <a href="https://instant.trf5.jus.br/inspecao-web/#/login">
+            https://instant.trf5.jus.br/inspecao-web/#/login
+        </a>
+    </div>
+
+    <script>
+        plot_relatorio();
+    </script>
+</body>
+
+</html>
