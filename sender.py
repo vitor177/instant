@@ -6,11 +6,11 @@ class Sender:
 
     def enviar_email(self, html):
 
-        sender_email = "klebinho1777@gmail.com"
+        sender_email = "instantredalert@gmail.com"
         #sender_email = "instantredalert@gmail.com"
         #receiver_email = "r_juscelinoaraujo@jfrn.jus.br"
         receiver_email = "joovitor177@gmail.com"
-        password = 'rbaj ikkh kfqf ubpk'
+        password = 'ymmh doef rovb ntvk'
 
         message = MIMEMultipart("alternative")
         message["Subject"] = "Instant Red Alert"
