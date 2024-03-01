@@ -1,7 +1,7 @@
 import smtplib, ssl
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-
+from email.mime.application import MIMEApplication
 class Sender:
 
     def enviar_email(self, html):
@@ -9,7 +9,7 @@ class Sender:
         sender_email = "instantredalert@gmail.com"
         #sender_email = "instantredalert@gmail.com"
         #receiver_email = "r_juscelinoaraujo@jfrn.jus.br"
-        receiver_email = "joovitor177@gmail.com"
+        receiver_email = "vitor848485@gmail.com"
         password = 'ymmh doef rovb ntvk'
 
         message = MIMEMultipart("alternative")
@@ -25,11 +25,26 @@ class Sender:
         # Turn these into plain/html MIMEText objects
         part1 = MIMEText(text, "plain")
         part2 = MIMEText(html, "html")
+        
+
+
+
 
         # Add HTML/plain-text parts to MIMEMultipart message
         # The email client will try to render the last part first
         message.attach(part1)
         message.attach(part2)
+
+        attachmentPath = "PDF_TESTE.pdf"
+        try:
+            with open(attachmentPath, "rb") as attachment:
+                p = MIMEApplication(attachment.read(),_subtype="pdf")	
+                p.add_header('Content-Disposition', "attachment; filename= %s" % attachmentPath.split("\\")[-1]) 
+                message.attach(p)
+        except Exception as e:
+            print(str(e))
+
+
 
         # Conexão
         context = ssl.create_default_context()
