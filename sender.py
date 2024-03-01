@@ -35,7 +35,7 @@ class Sender:
         message.attach(part1)
         message.attach(part2)
 
-        attachmentPath = "PDF_TESTE.pdf"
+        attachmentPath = "relatorio.pdf"
         try:
             with open(attachmentPath, "rb") as attachment:
                 p = MIMEApplication(attachment.read(),_subtype="pdf")	
