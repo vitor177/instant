@@ -1,0 +1,10 @@
+email_config:
+  quantidade_dias: 30
+  destinatarios:
+    - gabinete1@trf5.jus.br
+    - gabinete2@trf5.jus.br
+  servidor_smtp:
+    login: instantredalert
+    senha: redalert123
+    dominio: smtp.gmail.com
+    porta: 465
