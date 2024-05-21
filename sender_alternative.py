@@ -3,6 +3,11 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
 from email.mime.image import MIMEImage
+from datetime import date
+
+data = date.today()
+data = data.strftime('%d/%m/%Y')
+
 
 import base64
 
@@ -14,7 +19,7 @@ strFrom = "instantredalert@gmail.com"
 strTo = "t_jfmendonca@trf5.jus.br"
 #receiver_email = "vitor848485@gmail.com"
 password = 'ymmh doef rovb ntvk'
-
+    
 # Create the root message 
 
 msgRoot = MIMEMultipart('related')
@@ -30,11 +35,16 @@ msgText = MIMEText('Alternative plain text message.')
 msgAlternative.attach(msgText)
 
 import pandas as pd
-tabela_ordenada = pd.read_csv('prescricao_resumo.csv')
+dtype_map = {'Sigla': str, 'Entre 1 ano e 2': int, 'Maior que 2 anos': int, 'Menor que 1 ano': int}
+tabela_ordenada = pd.read_csv('prescricao_resumo.csv', dtype=dtype_map, index_col=False)
+tabela_ordenada.index+=1
+
+
+
 conteudo_tabela = tabela_ordenada.to_html()
 cleaned_html = conteudo_tabela.replace('border="1"', '').replace('class="dataframe"', '')
 styled_html = cleaned_html.replace('<table>', '<table style="border-collapse: collapse; width: 100%;">').replace('<tr>', '<tr style="background-color: #f2f2f2;">')
-
+html_modificado = styled_html.replace('text-align: right;', 'text-align: center;')
 
 #sem_border = conteudo_tabela[]
 print(cleaned_html)
@@ -128,7 +138,7 @@ variable = """
             Administrativa e Geral
             <span id="sigla"></span>
         </p>
-        <p class="subtitulo">Data de extração <strong id="data_extracao">30/04/2024</strong></p>
+        <p class="subtitulo">Data de extração: <strong id="data_extracao">"""+str(data)+"""</strong></p>
 
         <table class="tabela_de_imagens">
             <tr>
@@ -159,7 +169,7 @@ variable = """
     <div>
         <p class="secao">
         </p>
-        """ + styled_html + """
+        """ + html_modificado + """
     </div>
 
     <div class="footer">
