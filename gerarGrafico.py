@@ -5,9 +5,9 @@ import pandas as pd
 dataframe = pd.read_csv('prescricao_resumo.csv')
 
 # Definindo as cores padrão para cada categoria
-cores = ['blue', 'orange', 'red']
+cores = ['#669BBC', '#f0bd00', '#780000']
 
-labels = ['Menor que 1 ano', 'Entre 1 ano e 2', 'Maior que 2 anos']
+labels = ['Maior que 2 anos', 'Entre 1 ano e 2', 'Menor que 1 ano']
 
 for i in range(len(dataframe)):
     y = np.array(dataframe.iloc[i].iloc[-3:].tolist())
