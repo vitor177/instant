@@ -16,7 +16,8 @@ strFrom = "instantredalert@gmail.com"
 #sender_email = "instantredalert@gmail.com"
 #receiver_email = "r_juscelinoaraujo@jfrn.jus.br"
 #receiver_email = "deboracamilanobre@gmail.com"
-strTo = "t_jfmendonca@trf5.jus.br"
+#strTo = "matheusk500@hotmail.com"
+strTo = "matheusk500@hotmail.com"
 #receiver_email = "vitor848485@gmail.com"
 password = 'ymmh doef rovb ntvk'
     
@@ -55,7 +56,6 @@ variable = """
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relatório Mensal de Prescrição e Improbidade Administrativa</title>
     <style>
-
         body {
             font-family: "Verdana", "sans-serif";
         }
@@ -84,6 +84,7 @@ variable = """
             align-items: center;
             margin: 2em auto; /* centraliza a tabela horizontalmente */
             display: table; /* para centralizar verticalmente */
+            border-spacing: 0; /* remove o espaçamento entre as células da tabela */
         }
 
         .footer {
@@ -96,7 +97,9 @@ variable = """
 
         .grafico {
             width: 14em;
-            padding: 0 2em;
+            padding: 0; /* remove o padding entre as imagens */
+            margin: 0; /* remove a margem entre as imagens */
+            display: block; /* garante que a imagem seja tratada como um bloco */
         }
 
         table {
@@ -138,7 +141,7 @@ variable = """
             Administrativa e Geral
             <span id="sigla"></span>
         </p>
-        <p class="subtitulo">Data de extração: <strong id="data_extracao">"""+str(data)+"""</strong></p>
+        <p class="subtitulo">Data de extração: <strong id="data_extracao">""" + str(data) + """</strong></p>
 
         <table class="tabela_de_imagens">
             <tr>
@@ -185,6 +188,7 @@ variable = """
         TRF5 - Tribunal Regional Federal da 5ª Região
     </div>
 </body>
+
 """
 
 

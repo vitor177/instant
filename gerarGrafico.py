@@ -18,13 +18,13 @@ for i in range(len(dataframe)):
     titulo = f'SJ {dataframe.iloc[i].iloc[0]}'  # Usando iloc[] para acessar por posição
     
     # Configurando o estilo da fonte para os valores
-    fonte_valores = {'fontsize': 14, 'fontweight': 'bold'}
+    fonte_valores = {'fontsize': 16, 'fontweight': 'bold'}
     
     # Criando o gráfico de pizza sem labels
     plt.pie(y, colors=cores, autopct='%1.1f%%', textprops=fonte_valores)
     
     # Criando a legenda com as cores correspondentes
-    plt.legend(labels=labels, loc='upper right', fontsize=14, title='Legenda')
+    plt.legend(labels=labels, loc='upper right', fontsize=16, title='Legenda')
     
     # Configurando o estilo da fonte para o título do gráfico
     plt.title(titulo, fontsize=16, fontweight='bold')
