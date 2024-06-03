@@ -4,9 +4,12 @@ import pandas as pd
 
 dataframe = pd.read_csv('prescricao_resumo.csv')
 
-# Definindo as cores padrão para cada categoria
+# Definindo as novas cores para cada categoria
+
+#         AZUL        AMARELO   VERMELHO
 cores = ['#669BBC', '#f0bd00', '#780000']
 
+# Ajustando as labels para corresponderem às cores
 labels = ['Maior que 2 anos', 'Entre 1 ano e 2', 'Menor que 1 ano']
 
 for i in range(len(dataframe)):

@@ -1,7 +1,7 @@
-Sigla,Menor que 1 ano,Entre 1 ano e 2,Maior que 2 anos
-AL,0.0,170.0,16.0
-CE,0.0,514.0,37.0
-PB,0.0,328.0,17.0
-PE,0.0,312.0,48.0
-RN,0.0,204.0,15.0
-SE,0.0,109.0,15.0
+Sigla,Entre 1 ano e 2,Maior que 2 anos,Menor que 1 ano
+AL,170.0,16.0,0.0
+CE,514.0,37.0,0.0
+PB,328.0,17.0,0.0
+PE,312.0,48.0,0.0
+RN,204.0,15.0,0.0
+SE,109.0,15.0,0.0
