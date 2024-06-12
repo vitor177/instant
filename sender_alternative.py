@@ -17,7 +17,7 @@ strFrom = "instantredalert@gmail.com"
 #receiver_email = "r_juscelinoaraujo@jfrn.jus.br"
 #receiver_email = "deboracamilanobre@gmail.com"
 #strTo = "matheusk500@hotmail.com"
-strTo = "matheusk500@hotmail.com"
+strTo = "t_jfmendonca@trf5.jus.br"
 #receiver_email = "vitor848485@gmail.com"
 password = 'ymmh doef rovb ntvk'
     

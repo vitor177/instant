@@ -1,13 +1,13 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-
+a = 1
 dataframe = pd.read_csv('prescricao_resumo.csv')
 
 # Definindo as cores padrão para cada categoria
 cores = ['#669BBC', '#f0bd00', '#780000']
 
-labels = ['Maior que 2 anos', 'Entre 1 ano e 2', 'Menor que 1 ano']
+labels = ['Menor que 1 ano', 'Entre 1 ano e 2', 'Maior que 2 anos',  ]
 
 for i in range(len(dataframe)):
     y = np.array(dataframe.iloc[i].iloc[-3:].tolist())
